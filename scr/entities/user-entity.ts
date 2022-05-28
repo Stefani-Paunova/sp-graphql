@@ -1,7 +1,7 @@
 import { ObjectType, Field, Authorized } from "type-graphql";
 import { prop as Prop, getModelForClass, modelOptions, Severity } from "@typegoose/typegoose"
 import { ObjectId } from "mongodb";
-import { Car } from "./Car-entity";
+import { Car } from "./car-entity";
 import { UserRoles } from "../resolvers/user/user-roles";
 
 @modelOptions({ options: { allowMixed: Severity.ALLOW } })
