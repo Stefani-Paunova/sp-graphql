@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Arg, Authorized } from "type-graphql";
 import { BaseCarInput } from "./car-arguments";
-import { Car, CarModel } from "../../entities/Car-entity";
+import { Car, CarModel } from "../../entities/car-entity";
 import { UserRoles } from "../user/user-roles";
 
 @Resolver()
