@@ -64,7 +64,7 @@ __decorate([
 __decorate([
     (0, type_graphql_1.Field)(type => [car_arguments_1.CarInput]),
     __metadata("design:type", Array)
-], EditUserInput.prototype, "games", void 0);
+], EditUserInput.prototype, "cars", void 0);
 EditUserInput = __decorate([
     (0, type_graphql_1.InputType)()
 ], EditUserInput);

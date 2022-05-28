@@ -13,7 +13,7 @@ exports.UserModel = exports.User = void 0;
 const type_graphql_1 = require("type-graphql");
 const typegoose_1 = require("@typegoose/typegoose");
 const mongodb_1 = require("mongodb");
-const Car_entity_1 = require("./Car-entity");
+const car_entity_1 = require("./car-entity");
 const user_roles_1 = require("../resolvers/user/user-roles");
 let User = class User {
 };
@@ -47,7 +47,7 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "lastLogin", void 0);
 __decorate([
-    (0, type_graphql_1.Field)(type => [Car_entity_1.Car]),
+    (0, type_graphql_1.Field)(type => [car_entity_1.Car]),
     (0, typegoose_1.prop)({ default: [] }),
     __metadata("design:type", Array)
 ], User.prototype, "cars", void 0);

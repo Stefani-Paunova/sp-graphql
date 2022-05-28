@@ -31,9 +31,9 @@ input CreateUserInput {
 }
 
 input EditUserInput {
+  cars: [CarInput!]!
   email: String
   firstName: String
-  games: [CarInput!]!
   lastName: String
   password: String
 }

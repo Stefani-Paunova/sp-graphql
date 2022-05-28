@@ -15,42 +15,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CarResolver = void 0;
 const type_graphql_1 = require("type-graphql");
 const car_arguments_1 = require("./car-arguments");
-const Car_entity_1 = require("../../entities/Car-entity");
+const car_entity_1 = require("../../entities/car-entity");
 const user_roles_1 = require("../user/user-roles");
 let CarResolver = class CarResolver {
     async cars() {
-        return await Car_entity_1.CarModel.find({});
+        return await car_entity_1.CarModel.find({});
     }
     async car(_id) {
-        return await Car_entity_1.CarModel.findById(_id);
+        return await car_entity_1.CarModel.findById(_id);
     }
     async createCar(data) {
-        const newUser = new Car_entity_1.CarModel(data);
+        const newUser = new car_entity_1.CarModel(data);
         await newUser.save();
         return newUser;
     }
     async deleteCar(_id) {
-        return await Car_entity_1.CarModel.findByIdAndRemove(_id);
+        return await car_entity_1.CarModel.findByIdAndRemove(_id);
     }
     async editCar(_id, data) {
-        return await Car_entity_1.CarModel.findByIdAndUpdate(_id, data, { new: true });
+        return await car_entity_1.CarModel.findByIdAndUpdate(_id, data, { new: true });
     }
 };
 __decorate([
-    (0, type_graphql_1.Query)(returns => [Car_entity_1.Car]),
+    (0, type_graphql_1.Query)(returns => [car_entity_1.Car]),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CarResolver.prototype, "cars", null);
 __decorate([
-    (0, type_graphql_1.Query)(returns => Car_entity_1.Car),
+    (0, type_graphql_1.Query)(returns => car_entity_1.Car),
     __param(0, (0, type_graphql_1.Arg)("_id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CarResolver.prototype, "car", null);
 __decorate([
-    (0, type_graphql_1.Mutation)(returns => Car_entity_1.Car),
+    (0, type_graphql_1.Mutation)(returns => car_entity_1.Car),
     __param(0, (0, type_graphql_1.Arg)("data")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [car_arguments_1.BaseCarInput]),
@@ -58,14 +58,14 @@ __decorate([
 ], CarResolver.prototype, "createCar", null);
 __decorate([
     (0, type_graphql_1.Authorized)([user_roles_1.UserRoles.ADMIN, user_roles_1.UserRoles.SUPER_ADMIN]),
-    (0, type_graphql_1.Mutation)(returns => Car_entity_1.Car),
+    (0, type_graphql_1.Mutation)(returns => car_entity_1.Car),
     __param(0, (0, type_graphql_1.Arg)("_id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CarResolver.prototype, "deleteCar", null);
 __decorate([
-    (0, type_graphql_1.Mutation)(returns => Car_entity_1.Car),
+    (0, type_graphql_1.Mutation)(returns => car_entity_1.Car),
     __param(0, (0, type_graphql_1.Arg)("_id")),
     __param(1, (0, type_graphql_1.Arg)("data")),
     __metadata("design:type", Function),

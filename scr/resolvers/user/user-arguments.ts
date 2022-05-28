@@ -41,5 +41,5 @@ export class EditUserInput {
     password?: string;
 
     @Field(type => [CarInput])
-    games?: CarInput[]
+    cars?: CarInput[]
 }
