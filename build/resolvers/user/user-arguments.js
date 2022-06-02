@@ -13,6 +13,7 @@ exports.EditUserInput = exports.CreateUserInput = void 0;
 const class_validator_1 = require("class-validator");
 const type_graphql_1 = require("type-graphql");
 const car_arguments_1 = require("../car/car-arguments");
+const garage_arguments_1 = require("../garage/garage-arguments");
 let CreateUserInput = class CreateUserInput {
 };
 __decorate([
@@ -65,6 +66,10 @@ __decorate([
     (0, type_graphql_1.Field)(type => [car_arguments_1.CarInput]),
     __metadata("design:type", Array)
 ], EditUserInput.prototype, "cars", void 0);
+__decorate([
+    (0, type_graphql_1.Field)(type => [garage_arguments_1.GarageInput]),
+    __metadata("design:type", Array)
+], EditUserInput.prototype, "garages", void 0);
 EditUserInput = __decorate([
     (0, type_graphql_1.InputType)()
 ], EditUserInput);

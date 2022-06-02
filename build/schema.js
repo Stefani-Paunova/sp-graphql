@@ -33,9 +33,10 @@ const mongodb_1 = require("mongodb");
 const object_id_scalar_1 = require("./object-id.scalar");
 const path = __importStar(require("path"));
 const auth_checker_1 = require("./resolvers/auth/auth-checker");
+const garage_resolver_1 = require("./resolvers/garage/garage-resolver");
 const getSchema = async () => {
     const schema = await (0, type_graphql_1.buildSchema)({
-        resolvers: [user_resolver_1.UserResolver, auth_resolver_1.AuthResolver, car_resolver_1.CarResolver],
+        resolvers: [user_resolver_1.UserResolver, auth_resolver_1.AuthResolver, car_resolver_1.CarResolver, garage_resolver_1.GarageResolver],
         emitSchemaFile: path.resolve(__dirname, "schema.gql"),
         // use document converting middleware
         globalMiddlewares: [typegoose_middleware_1.TypegooseMiddleware],

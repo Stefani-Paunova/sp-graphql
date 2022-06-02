@@ -1,6 +1,7 @@
 import { MaxLength, MinLength, IsEmail } from "class-validator";
 import { Field, InputType } from "type-graphql";
 import { CarInput } from "../car/car-arguments";
+import { GarageInput } from "../garage/garage-arguments";
 
 @InputType()
 export class CreateUserInput {
@@ -42,4 +43,7 @@ export class EditUserInput {
 
     @Field(type => [CarInput])
     cars?: CarInput[]
+
+    @Field(type => [GarageInput])
+    garages?: GarageInput[]
 }

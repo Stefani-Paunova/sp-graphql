@@ -7,10 +7,11 @@ import { ObjectId } from "mongodb";
 import { ObjectIdScalar } from "./object-id.scalar";
 import * as path from "path"
 import { authChecker } from "./resolvers/auth/auth-checker";
+import { GarageResolver } from "./resolvers/garage/garage-resolver";
 
 export const getSchema = async () => {
     const schema = await buildSchema({
-        resolvers: [UserResolver, AuthResolver, CarResolver],
+        resolvers: [UserResolver, AuthResolver, CarResolver, GarageResolver],
         emitSchemaFile: path.resolve(__dirname, "schema.gql"),
         // use document converting middleware
         globalMiddlewares: [TypegooseMiddleware],

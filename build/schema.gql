@@ -9,6 +9,11 @@ input BaseCarInput {
   year: Float!
 }
 
+input BaseGarageInput {
+  number: Float!
+  street: String!
+}
+
 type Car {
   _id: ObjectId!
   brand: String!
@@ -34,16 +39,32 @@ input EditUserInput {
   cars: [CarInput!]!
   email: String
   firstName: String
+  garages: [GarageInput!]!
   lastName: String
   password: String
 }
 
+type Garage {
+  _id: ObjectId!
+  number: Float!
+  street: String!
+}
+
+input GarageInput {
+  _id: ObjectId!
+  number: Float!
+  street: String!
+}
+
 type Mutation {
   createCar(data: BaseCarInput!): Car!
+  createGarage(data: BaseGarageInput!): Garage!
   createUser(data: CreateUserInput!): User!
   deleteCar(_id: String!): Car!
+  deleteGarage(_id: String!): Garage!
   deleteUser(_id: String!): User!
   editCar(_id: String!, data: BaseCarInput!): Car!
+  editGarage(_id: String!, data: BaseGarageInput!): Garage!
   editUser(_id: String!, data: EditUserInput!): User!
   login(email: String!, password: String!): String!
 }
@@ -55,6 +76,8 @@ type Query {
   car(_id: String!): Car!
   cars: [Car!]!
   currentUser: User!
+  garage(_id: String!): Garage!
+  garages: [Garage!]!
   user(_id: String!): User!
   users: [User!]!
 }
